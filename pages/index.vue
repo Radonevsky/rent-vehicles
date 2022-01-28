@@ -1,9 +1,16 @@
 <template>
-  <Tutorial />
+  <div>
+    <VehiclesList />
+  </div>
 </template>
-
 <script>
+
+import VehiclesList from '../components/VehiclesList'
 export default {
-  name: 'IndexPage',
+  name: 'MainLayout',
+  components: {
+    VehiclesList
+  },
+  layout: 'Vehicles',
 }
 </script>
