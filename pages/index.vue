@@ -1,6 +1,8 @@
 <template>
   <div>
-    <VehiclesList />
+    <div class='container'>
+      <VehiclesList />
+    </div>
   </div>
 </template>
 <script>
@@ -14,3 +16,7 @@ export default {
   layout: 'Vehicles',
 }
 </script>
+
+<style>
+  .container {}
+</style>

@@ -1,7 +1,7 @@
 <template>
   <header class='header'>
-    HEADER
-    <span :class="$style.test">TEST HEADER</span>
+     
+<!--    <span :class="$style.test">TEST HEADER</span>-->
   </header>
 </template>
 
