@@ -9,6 +9,9 @@ body {
   p {
     font-family: mainLight, sans-serif;
   }
+  ol, ul, li {
+    list-style: none;
+  }
   .container {
     max-width: 1312px;
     margin: 0 auto;

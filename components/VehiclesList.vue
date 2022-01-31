@@ -1,19 +1,44 @@
 <template>
-  <div class='vehicles'>
-    <h2>Vehicles list</h2>
-    <div class='vehicle'>I <span>am</span> vehicle</div>
-    <span :class="$style.test">vehiclesLIST TEST SPAN</span>
+  <div>
+    <ul :class=$style.list>
+      <li v-for='(item, idx) in vehicles' :key='idx'>
+        <VehicleCard :title='item.name' />
+      </li>
+    </ul>
   </div>
 </template>
 
 <script>
+import VehicleCard from './VehicleCard'
+
 export default {
-  name: 'VehiclesList'
+  name: 'VehiclesList',
+  components: {
+    VehicleCard
+  },
+  data () {
+    return {
+      vehicles: [
+        { name: 'HelloWorld1' },
+        { name: 'HelloWorld2' },
+        { name: 'HelloWorld3' },
+        { name: 'HelloWorld4' },
+        { name: 'HelloWorld5' },
+        { name: 'HelloWorld6' },
+        { name: 'HelloWorld7' },
+        { name: 'HelloWorld8' },
+        { name: 'HelloWorld9' },
+      ]
+    }
+  }
 }
 </script>
 
 <style lang='scss' module>
-  .test {
-    color: green;
+@import "assets/scss/vars";
+  .list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
   }
 </style>

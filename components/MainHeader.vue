@@ -100,6 +100,9 @@ export default {
           font-family: mainBold, sans-serif;
           margin-right: 1rem;
         }
+        .userPhoto {
+          border-radius: 50%;
+        }
       }
     }
   }
