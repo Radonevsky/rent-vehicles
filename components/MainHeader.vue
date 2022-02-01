@@ -34,7 +34,7 @@ export default {
 <style lang='scss' module>
 @import '../assets/scss/vars';
 .header {
-  height: 144px;
+  height: 136px;
   align-items: center;
   .flex {
     display: flex;

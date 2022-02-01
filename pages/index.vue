@@ -1,11 +1,11 @@
 <template>
   <div class='container'>
     <div :class=$style.vehiclesPage>
-      <div :class=$style.options>
-        <div :class=$style.filter>Rent whatever</div>
-        <div :class=$style.add>Add new</div>
-      </div>
       <div :class=$style.vehiclesContainer>
+        <div :class=$style.options>
+          <h1 :class=$style.filter>Rent <span>whatever</span></h1>
+          <div :class=$style.add>Add new</div>
+        </div>
         <VehiclesList />
       </div>
     </div>
@@ -29,8 +29,27 @@ export default {
 
 .vehiclesPage {
   width: 100%;
+  padding: 56px 28px;
   background-color: $background-gray;
   border-radius: 48px;
+
+  .options {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+    font-family: mainBold, sans-serif;
+    line-height: 3rem;
+    .filter {
+      font-size: 2.5rem;
+      color: $text-dark;
+      span {
+        color: $text-blue;
+      }
+    }
+    .add {
+      color: $text-blue;
+    }
+  }
   .vehiclesContainer {
     max-width: 1184px;
     width: 100%;

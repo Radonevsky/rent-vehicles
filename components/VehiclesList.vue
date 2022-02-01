@@ -39,6 +39,8 @@ export default {
   .list {
     display: flex;
     flex-wrap: wrap;
-    gap: 32px;
+    justify-content: space-between;
+    row-gap: 32px;
+    column-gap: 16px;
   }
 </style>
