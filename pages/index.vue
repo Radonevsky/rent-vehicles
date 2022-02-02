@@ -30,7 +30,7 @@ export default {
 .vehiclesPage {
   width: 100%;
   padding: 56px 28px;
-  background-color: $background-gray;
+  background-color: darken($background-gray, 10%);
   border-radius: 48px;
 
   .options {
@@ -47,6 +47,7 @@ export default {
       }
     }
     .add {
+      font-size: 1.25rem;
       color: $text-blue;
     }
   }

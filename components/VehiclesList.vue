@@ -37,10 +37,8 @@ export default {
 <style lang='scss' module>
 @import "assets/scss/vars";
   .list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    row-gap: 32px;
-    column-gap: 16px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 32px;
   }
 </style>
