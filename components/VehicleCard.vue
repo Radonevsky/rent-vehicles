@@ -35,7 +35,7 @@ export default {
   border-radius: 32px;
 
   background-color: $background-white;
-  img {
+  .img {
     display: inline-block;
     max-width: 88px;
     width: 100%;

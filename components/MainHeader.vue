@@ -69,6 +69,8 @@ export default {
       line-height: 1.5;
       padding-left: 40px;
       position: relative;
+      min-width: 24px;
+      min-height: 24px;
 
       font-family: mainLight, sans-serif;
       background: url("../static/images/svg/Moon.svg") no-repeat;

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2>This is a TERMS</h2>
+    <h2>This is TERMS</h2>
   </div>
 </template>
 
