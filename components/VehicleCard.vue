@@ -1,6 +1,6 @@
 <template>
   <div :class=$style.vehicleCard>
-    <img :class=$style.img src='https://loremflickr.com/160/160/airship?random=5f2bb90af01f47feb86b5da0' alt='vehicle preview'>
+    <img :class=$style.img src='https://loremflickr.com/cache/resized/65535_51380109979_37320c36bf_m_160_160_nofilter.jpg' alt='vehicle preview'>
     <div :class=$style.inform>
       <h3 :class=$style.title>XR-74 «Cooper»</h3>
       <p :class=$style.description>Brief description of the project, in a few lines.</p>
