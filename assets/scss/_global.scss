@@ -3,6 +3,7 @@
 body {
   font-size: 16px;
   background-color: $background-white;
+  cursor: default;
   h1, h2, h3 {
     font-family: mainBold, sans-serif;
   }
@@ -11,6 +12,10 @@ body {
   }
   ol, ul, li {
     list-style: none;
+  }
+
+  button {
+    cursor: pointer;
   }
   .container {
     max-width: 1312px;

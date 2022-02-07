@@ -2,27 +2,29 @@
   <div :class=$style.vehiclePage>
     <div class='container'>
       <div :class=$style.inner>
-        <img :class=$style.img src='https://loremflickr.com/900/900/airship' alt='Vehicle image'>
+        <div :class=$style.imgInner><img :class=$style.img src='https://loremflickr.com/900/900/airship' alt='Vehicle image'></div>
         <div :class=$style.info>
           <h2 :class=$style.title>XR-74 «Cooper»</h2>
           <ul :class=$style.links>
             <li :class=$style.linksItem>
-              <nuxt-link :to='{ path: `specification` }'>
-                <p>Specifications</p>
+              <nuxt-link :to='{ path: `specification` }' :class=$style.link :active-class=$style.activeLink>
+                Specifications
               </nuxt-link>
             </li>
             <li :class=$style.linksItem>
-              <nuxt-link :to='{ path: `team` }'>
-                <p>Team</p>
+              <nuxt-link :to='{ path: `team` }' :class=$style.link :active-class=$style.activeLink>
+                Team
               </nuxt-link>
             </li>
             <li :class=$style.linksItem>
-              <nuxt-link :to='{ path: `terms` }'>
-                <p>Rent terms</p>
+              <nuxt-link :to='{ path: `terms` }' :class=$style.link :active-class=$style.activeLink>
+               Rent terms
               </nuxt-link>
             </li>
           </ul>
-          <nuxt-child />
+          <div :class=$style.linksContent>
+            <nuxt-child />
+          </div>
           <div :class=$style.rent>
             <p>Rent for <span>164 $/h</span></p>
             <button>Rent now</button>
@@ -63,14 +65,20 @@ export default {
 .inner {
   display: flex;
   gap: 64px;
-  .img {
-    display: inline-block;
-    max-width: 712px;
-    width: 100%;
-    max-height: 700px;
-    overflow: hidden;
-    border-radius: 24px;
+  margin-bottom: 56px;
+  .imgInner {
+    width: 712px;
+    height: 700px;
+    .img {
+      display: inline-block;
+      max-width: 712px;
+      width: 100%;
+      max-height: 700px;
+      overflow: hidden;
+      border-radius: 24px;
+    }
   }
+
   .info {
     display: flex;
     flex-direction: column;
@@ -85,9 +93,24 @@ export default {
       display: flex;
       gap: 32px;
       justify-content: space-between;
-      margin-top: 32px;
+      margin: 32px 0;
       max-width: 300px;
     }
+    .link {
+      font-size: 1rem;
+      line-height: 14px;
+      font-family: mainBold, sans-serif;
+      text-decoration: none;
+      color: $text-gray;
+    }
+    .activeLink {
+      color: $text-blue;
+    }
+
+  }
+
+  .linksContent {
+    min-height: 398px;
   }
 }
 </style>
