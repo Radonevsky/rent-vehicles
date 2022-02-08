@@ -2,7 +2,7 @@
   <div :class=$style.vehiclePage>
     <div class='container'>
       <div :class=$style.inner>
-        <div :class=$style.imgInner><img :class=$style.img src='https://loremflickr.com/900/900/airship' alt='Vehicle image'></div>
+        <img :class=$style.img src='https://loremflickr.com/900/900/airship' alt='Vehicle image'>
         <div :class=$style.info>
           <h2 :class=$style.title>XR-74 «Cooper»</h2>
           <ul :class=$style.links>
@@ -26,8 +26,8 @@
             <nuxt-child />
           </div>
           <div :class=$style.rent>
-            <p>Rent for <span>164 $/h</span></p>
-            <button>Rent now</button>
+            <p :class=$style.rentText>Rent for <span>164 $/h</span></p>
+            <button :class=$style.rentButton>Rent now</button>
           </div>
         </div>
       </div>
@@ -66,17 +66,14 @@ export default {
   display: flex;
   gap: 64px;
   margin-bottom: 56px;
-  .imgInner {
-    width: 712px;
-    height: 700px;
-    .img {
-      display: inline-block;
-      max-width: 712px;
-      width: 100%;
-      max-height: 700px;
-      overflow: hidden;
-      border-radius: 24px;
-    }
+  .img {
+    display: inline-block;
+    min-width: 712px;
+    max-width: 712px;
+    width: 100%;
+    max-height: 700px;
+    overflow: hidden;
+    border-radius: 24px;
   }
 
   .info {
@@ -93,7 +90,7 @@ export default {
       display: flex;
       gap: 32px;
       justify-content: space-between;
-      margin: 32px 0;
+      margin: 30px 0;
       max-width: 300px;
     }
     .link {
@@ -111,6 +108,37 @@ export default {
 
   .linksContent {
     min-height: 398px;
+  }
+
+  .rent {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 536px;
+    min-height: 80px;
+    padding: 0 32px;
+    background-color: $background-gray;
+    border-radius: 16px;
+    .rentText {
+      font-family: mainBold, sans-serif;
+      font-size: 1.25rem;
+      line-height: 140%;
+      color: $text-dark;
+      span {
+        color: $text-pink;
+      }
+    }
+    .rentButton {
+      width: 136px;
+      height: 48px;
+      font-family: mainBold, sans-serif;
+      font-size: 1rem;
+      line-height: 0.875rem;
+      color: $background-white;
+      background-color: $text-blue;
+      border-radius: 12px;
+      border: none;
+    }
   }
 }
 </style>
