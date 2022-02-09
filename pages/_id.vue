@@ -90,7 +90,7 @@ export default {
       display: flex;
       gap: 32px;
       justify-content: space-between;
-      margin: 30px 0;
+      margin: 29px 0 31px;
       max-width: 300px;
     }
     .link {
