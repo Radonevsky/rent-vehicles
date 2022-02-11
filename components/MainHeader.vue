@@ -3,7 +3,9 @@
      <div class='container'>
        <div :class='[$style.flexContainer, $style.flex]'>
          <div :class='[$style.logo, $style.flex]'>
+           <nuxt-link to='/'>
            <img :class=$style.logoImg src='../static/images/svg/LogoLight.svg' alt='Logo'>
+           </nuxt-link>
            <div :class=$style.logoDescription><p>World's first affordable airsharing</p></div>
          </div>
          <nav :class='[$style.nav, $style.flex]'>

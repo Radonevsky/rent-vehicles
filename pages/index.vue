@@ -1,26 +1,36 @@
 <template>
-  <div class='container'>
-    <div :class=$style.vehiclesPage>
-      <div :class=$style.vehiclesContainer>
-        <div :class=$style.options>
-          <h1 :class=$style.filter>Rent <span>whatever</span></h1>
-          <div :class=$style.add>Add new</div>
+  <div>
+    <div class='container'>
+      <div :class=$style.vehiclesPage>
+        <div :class=$style.vehiclesContainer>
+          <div :class=$style.options>
+            <h1 :class=$style.filter>Rent <span>whatever</span></h1>
+            <div :class=$style.add @click='isModalShow = true'>Add new</div>
+          </div>
+          <VehiclesList />
         </div>
-        <VehiclesList />
       </div>
     </div>
+    <Modal v-if='isModalShow === true' @close='isModalShow = false'/>
   </div>
 </template>
 <script>
 
 import VehiclesList from '../components/VehiclesList'
+import Modal from '../components/Modal'
 
 export default {
   name: 'MainLayout',
   components: {
-    VehiclesList
+    VehiclesList,
+    Modal
   },
-  layout: 'Vehicles'
+  layout: 'Vehicles',
+  data() {
+    return {
+      isModalShow: false
+    }
+  }
 }
 </script>
 
@@ -68,13 +78,14 @@ export default {
       padding-right: 68px;
       position: relative;
 
+      cursor: pointer;
       font-size: 1.25rem;
       color: $text-blue;
 
       &:after {
         content: "";
-        width: 48px;
-        height: 48px;
+        width: $button-size;
+        height: $button-size;
         position: absolute;
         right: 0;
         top: calc(50% - 24px);

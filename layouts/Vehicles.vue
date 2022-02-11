@@ -1,5 +1,5 @@
 <template>
-  <div :class='$style.container'>
+  <div>
     <MainHeader />
     <Nuxt />
   </div>
@@ -14,7 +14,5 @@ export default {
 </script>
 
 <style lang='scss' module>
-  body {
 
-  }
 </style>
