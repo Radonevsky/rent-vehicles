@@ -30,6 +30,9 @@ export default {
     return {
       isModalShow: false
     }
+  },
+  created() {
+    this.$store.dispatch('vehicles/loadVehicles')
   }
 }
 </script>

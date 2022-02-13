@@ -1,10 +1,10 @@
 <template>
   <div :class=$style.vehicleCard>
-    <img :class=$style.img src='https://loremflickr.com/cache/resized/65535_51380109979_37320c36bf_m_160_160_nofilter.jpg' alt='vehicle preview'>
+    <img :class=$style.img :src='preview' alt='vehicle preview'>
     <div :class=$style.inform>
-      <h3 :class=$style.title>XR-74 «Cooper»</h3>
-      <p :class=$style.description>Brief description of the project, in a few lines.</p>
-      <p :class=$style.price>1 278 $/h</p>
+      <h3 :class=$style.title>{{ name }}</h3>
+      <p :class=$style.description>{{ description }}</p>
+      <p :class=$style.price>{{ rent }}$/h</p>
     </div>
   </div>
 </template>
@@ -13,9 +13,18 @@
 export default {
   name: 'VehicleCard',
   props: {
-    title: {
-      type: String,
-      default: "no title"
+    vehicle: {
+      default: null,
+      type: Object
+    }
+  },
+  data() {
+    return {
+      id: this.$props.vehicle.id,
+      name: this.$props.vehicle.name,
+      description: this.$props.vehicle.description,
+      rent: this.$props.vehicle.rent,
+      preview: this.$props.vehicle.preview
     }
   }
 }

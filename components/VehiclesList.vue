@@ -2,7 +2,7 @@
   <div>
     <ul :class=$style.list>
       <li v-for='(item, idx) in vehicles' :key='idx'>
-        <VehicleCard :title='item.name' />
+        <VehicleCard :vehicle='item' />
       </li>
     </ul>
   </div>
@@ -18,18 +18,14 @@ export default {
   },
   data () {
     return {
-      vehicles: [
-        { name: 'HelloWorld1' },
-        { name: 'HelloWorld2' },
-        { name: 'HelloWorld3' },
-        { name: 'HelloWorld4' },
-        { name: 'HelloWorld5' },
-        { name: 'HelloWorld6' },
-        { name: 'HelloWorld7' },
-        { name: 'HelloWorld8' },
-        { name: 'HelloWorld9' },
-      ]
     }
+  },
+  computed: {
+    vehicles() {
+      return this.$store.getters['vehicles/getVehicles']
+    }
+  },
+  methods: {
   }
 }
 </script>
