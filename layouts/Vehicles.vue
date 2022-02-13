@@ -9,7 +9,10 @@
 import MainHeader from '../components/MainHeader'
 export default {
   name: 'VehiclesLayout',
-  components: { MainHeader }
+  components: { MainHeader },
+  created() {
+    this.$store.dispatch('vehicles/loadVehicles')
+  }
 }
 </script>
 

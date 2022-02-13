@@ -2,9 +2,11 @@
   <div :class=$style.vehicleCard>
     <img :class=$style.img :src='preview' alt='vehicle preview'>
     <div :class=$style.inform>
-      <h3 :class=$style.title>{{ name }}</h3>
-      <p :class=$style.description>{{ description }}</p>
-      <p :class=$style.price>{{ rent }}$/h</p>
+      <nuxt-link :to='{ path: id }'>
+        <h3 :class=$style.title>{{ name }}</h3>
+        <p :class=$style.description>{{ description }}</p>
+        <p :class=$style.price>{{ rent }}$/h</p>
+      </nuxt-link>
     </div>
   </div>
 </template>
@@ -36,13 +38,13 @@ export default {
 .vehicleCard {
   display: flex;
   gap: 25px;
-
   max-width: 373.33px;
   width: 100%;
   height: 164px;
   padding: 24px 32px;
-  border-radius: 32px;
 
+  cursor: pointer;
+  border-radius: 32px;
   background-color: $background-white;
   .img {
     display: inline-block;

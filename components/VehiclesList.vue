@@ -1,7 +1,7 @@
 <template>
   <div>
     <ul :class=$style.list>
-      <li v-for='(item, idx) in vehicles' :key='idx'>
+      <li v-for='(item, idx) in vehiclesList' :key='idx'>
         <VehicleCard :vehicle='item' />
       </li>
     </ul>
@@ -21,7 +21,7 @@ export default {
     }
   },
   computed: {
-    vehicles() {
+    vehiclesList() {
       return this.$store.getters['vehicles/getVehicles']
     }
   },

@@ -2,9 +2,9 @@
   <div :class=$style.vehiclePage>
     <div class='container'>
       <div :class=$style.inner>
-        <img :class=$style.img src='https://loremflickr.com/900/900/airship' alt='Vehicle image'>
+        <img :class=$style.img src='../static/images/Savannah.jpg' alt='Vehicle image'>
         <div :class=$style.info>
-          <h2 :class=$style.title>XR-74 «Cooper»</h2>
+          <h2 :class=$style.title>{{ curVeh.name }}</h2>
           <ul :class=$style.links>
             <li :class=$style.linksItem>
               <nuxt-link :to='{ path: `specification` }' :class=$style.link :active-class=$style.activeLink>
@@ -32,6 +32,7 @@
         </div>
       </div>
     </div>
+    {{ currentVehicle() }}
   </div>
 </template>
 
@@ -41,20 +42,23 @@ export default {
   layout: 'Vehicles',
   data() {
     return {
-
+      curVeh: null
     }
   },
   computed: {
     id() {
       return this.$route.params.id
     },
-    /*  methods: {
-        goToSeventh() {
-          console.log(this.router)
-          this.router.push({ path: '7' })
-        }
-      }, */
-
+/*    currentVehicle() {
+      return this.$store.getters['vehicles/getCurrentVehicle'](this.id)
+    }, */
+  },
+  methods: {
+    currentVehicle() {
+      const vehicle = this.$store.getters['vehicles/getCurrentVehicle'](this.id)
+      this.curVeh = vehicle
+      console.log(this.curVeh)
+    },
   }
 }
 </script>

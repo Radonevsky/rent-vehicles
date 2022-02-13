@@ -5,7 +5,10 @@ export const state = () => ({
 })
 
 export const getters = {
-  getVehicles: state => state.vehicles
+  getVehicles: state => state.vehicles,
+  getCurrentVehicle: state => id => {
+    return state.vehicles.find(item => item.id === id)
+  }
 }
 
 export const mutations = {

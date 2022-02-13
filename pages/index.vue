@@ -31,9 +31,6 @@ export default {
       isModalShow: false
     }
   },
-  created() {
-    this.$store.dispatch('vehicles/loadVehicles')
-  }
 }
 </script>
 
