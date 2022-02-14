@@ -13,8 +13,8 @@ export const getVehicles = () =>
                 error: 'Server error',
             });
         } */
-        const delay = parseInt(Math.random() * 1000);
+        // const delay = parseInt(Math.random() * 1000);
         setTimeout(() => {
             resolve(vehicles);
-        }, delay);
+        }, 1000);
     });

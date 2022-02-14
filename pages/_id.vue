@@ -1,10 +1,11 @@
 <template>
-  <div :class=$style.vehiclePage>
+  <div>
     <div class='container'>
-      <div :class=$style.inner>
-        <img :class=$style.img src='../static/images/Savannah.jpg' alt='Vehicle image'>
+      <Loading v-if='isLoading' :class=$style.loading />
+      <div v-if='loadDone' :class=$style.inner >
+        <img :class=$style.img :src=currentVehicle.image alt='Vehicle image'>
         <div :class=$style.info>
-          <h2 :class=$style.title>{{ curVeh.name }}</h2>
+          <h2 :class=$style.title>{{ currentVehicle.name }}</h2>
           <ul :class=$style.links>
             <li :class=$style.linksItem>
               <nuxt-link :to='{ path: `specification` }' :class=$style.link :active-class=$style.activeLink>
@@ -26,40 +27,38 @@
             <nuxt-child />
           </div>
           <div :class=$style.rent>
-            <p :class=$style.rentText>Rent for <span>164 $/h</span></p>
+            <p :class=$style.rentText>Rent for <span>{{ currentVehicle.rent }} $/h</span></p>
             <button :class=$style.rentButton>Rent now</button>
           </div>
         </div>
       </div>
     </div>
-    {{ currentVehicle() }}
   </div>
 </template>
 
 <script>
+import Loading from '../components/Loading'
+
 export default {
   name: 'VehiclePage',
-  layout: 'Vehicles',
-  data() {
-    return {
-      curVeh: null
-    }
+  components: {
+    Loading
   },
+  layout: 'Vehicles',
   computed: {
     id() {
       return this.$route.params.id
     },
-/*    currentVehicle() {
-      return this.$store.getters['vehicles/getCurrentVehicle'](this.id)
-    }, */
-  },
-  methods: {
-    currentVehicle() {
-      const vehicle = this.$store.getters['vehicles/getCurrentVehicle'](this.id)
-      this.curVeh = vehicle
-      console.log(this.curVeh)
+    isLoading() {
+      return this.$store.getters['vehicles/getIsLoading']
     },
-  }
+    loadDone() {
+      return this.$store.getters['vehicles/getIsDone']
+    },
+    currentVehicle() {
+      return this.$store.getters['vehicles/getCurrentVehicle'](this.id)
+    },
+  },
 }
 </script>
 
@@ -144,5 +143,9 @@ export default {
       border: none;
     }
   }
+}
+.loading {
+  position: absolute;
+  top: 50vh;
 }
 </style>

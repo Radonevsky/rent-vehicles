@@ -1,14 +1,14 @@
 <template>
-  <div :class=$style.vehicleCard>
-    <img :class=$style.img :src='preview' alt='vehicle preview'>
-    <div :class=$style.inform>
-      <nuxt-link :to='{ path: id }'>
+  <nuxt-link :to='{ path: `${id}/specification` }'>
+    <div :class=$style.vehicleCard>
+      <img :class=$style.img :src='preview' alt='vehicle preview'>
+      <div :class=$style.inform>
         <h3 :class=$style.title>{{ name }}</h3>
         <p :class=$style.description>{{ description }}</p>
         <p :class=$style.price>{{ rent }}$/h</p>
-      </nuxt-link>
+      </div>
     </div>
-  </div>
+  </nuxt-link>
 </template>
 
 <script>
@@ -46,6 +46,7 @@ export default {
   cursor: pointer;
   border-radius: 32px;
   background-color: $background-white;
+
   .img {
     display: inline-block;
     max-width: 88px;
@@ -54,16 +55,19 @@ export default {
     overflow: hidden;
     border-radius: 24px;
   }
+
   .inform {
     display: flex;
     flex-direction: column;
     padding-top: 16px;
+
     .title {
       font-family: mainBold, sans-serif;
       font-size: 1rem;
       color: $text-dark;
       line-height: 0.875rem;
     }
+
     .description {
       margin-top: 13px;
       max-width: 185px;
@@ -72,6 +76,7 @@ export default {
       line-height: 148%;
       color: $text-gray;
     }
+
     .price {
       margin-top: 20px;
       font-family: mainBold, sans-serif;
