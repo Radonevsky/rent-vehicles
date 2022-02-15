@@ -28,6 +28,9 @@ export const mutations = {
   SET_VEHICLES(state, payload) {
     state.vehicles = payload
   },
+  SET_CUSTOM(state, payload) {
+    state.vehicles.push(payload)
+  },
 }
 
 export const actions = {

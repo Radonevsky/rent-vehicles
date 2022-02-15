@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div :class=$style.mainPage>
     <MainHeader />
     <Nuxt />
   </div>
@@ -17,5 +17,7 @@ export default {
 </script>
 
 <style lang='scss' module>
-
+.mainPage {
+  padding-bottom: 48px;
+}
 </style>
