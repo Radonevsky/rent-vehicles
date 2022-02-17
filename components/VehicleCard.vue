@@ -1,11 +1,11 @@
 <template>
   <nuxt-link :to='{ path: `${id}/specification` }'>
     <div :class=$style.vehicleCard>
-      <img :class=$style.img :src='preview' alt='vehicle preview'>
+      <img :class=$style.img :src='$props.vehicle.preview' alt='vehicle preview'>
       <div :class=$style.inform>
-        <h3 :class=$style.title>{{ name }}</h3>
-        <p :class=$style.description>{{ description }}</p>
-        <p :class=$style.price>{{ rent }}$/h</p>
+        <h3 :class=$style.title>{{ $props.vehicle.name }}</h3>
+        <p :class=$style.description>{{ $props.vehicle.description }}</p>
+        <p :class=$style.price>{{ $props.vehicle.rent }} $/h</p>
       </div>
     </div>
   </nuxt-link>
@@ -23,10 +23,6 @@ export default {
   data() {
     return {
       id: this.$props.vehicle.id,
-      name: this.$props.vehicle.name,
-      description: this.$props.vehicle.description,
-      rent: this.$props.vehicle.rent,
-      preview: this.$props.vehicle.preview
     }
   }
 }

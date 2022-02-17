@@ -23,11 +23,6 @@ export default {
     filteredType: String,
     default: null
   },
-  data () {
-    return {
-      vehiclesTypes: []
-    }
-  },
   computed: {
     isLoading() {
       return this.$store.getters['vehicles/getIsLoading']

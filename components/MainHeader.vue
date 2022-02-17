@@ -54,6 +54,7 @@ export default {
       display: inline-block;
       max-width: 170px;
       height: auto;
+      margin-top: 3px;
     }
     .logoDescription {
       font-family: mainLight, sans-serif;
@@ -110,5 +111,6 @@ export default {
       }
     }
   }
+
 }
 </style>

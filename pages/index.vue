@@ -74,7 +74,7 @@ export default {
     line-height: 3rem;
     .title {
       display: inline;
-      margin-right: 2px;
+      margin-right: 6px;
       font-size: 2.5rem;
       color: $text-dark;
     }
@@ -85,7 +85,7 @@ export default {
       border: none;
       position: relative;
       background: none;
-      padding-right: 28px;
+      padding-right: 13px;
       appearance: none;
       cursor: pointer;
       &:focus {
@@ -102,7 +102,7 @@ export default {
         height: 6px;
         position: absolute;
         right: 0;
-        top: calc(50% - 10px);
+        top: calc(50% - 12px);
         border-right: $text-blue 3px solid;
         border-bottom: $text-blue 3px solid;
         transform: rotate(45deg);
@@ -139,5 +139,8 @@ export default {
     width: 100%;
     margin: 0 auto;
   }
+}
+.dark {
+  background-color: $text-dark;
 }
 </style>
