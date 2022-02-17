@@ -2,7 +2,7 @@
   <div>
     <Loading v-if='isLoading'/>
     <ul v-if='loadDone' :class=$style.list>
-      <li v-for='(item, idx) in vehiclesList' :key='idx'>
+      <li v-for='(item, idx) in filteredVehicleList' :key='idx'>
         <VehicleCard :vehicle='item' />
       </li>
     </ul>
@@ -19,8 +19,13 @@ export default {
     VehicleCard,
     Loading
   },
+  props: {
+    filteredType: String,
+    default: null
+  },
   data () {
     return {
+      vehiclesTypes: []
     }
   },
   computed: {
@@ -32,6 +37,12 @@ export default {
     },
     vehiclesList() {
       return this.$store.getters['vehicles/getVehicles']
+    },
+    filteredVehicleList() {
+      if (this.$props.filteredType !== 'whatever') {
+        return this.vehiclesList.filter(item => item.type === this.$props.filteredType)
+      }
+      return this.vehiclesList
     }
   },
   methods: {

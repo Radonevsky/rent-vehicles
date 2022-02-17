@@ -12,6 +12,11 @@ export const getters = {
   getIsDone: state => state.isLoadDone,
   getCurrentVehicle: state => id => {
     return state.vehicles.find(item => item.id === id)
+  },
+  getTypes: state => {
+    const types = []
+    state.vehicles.forEach(item => types.push(item.type))
+    return [...new Set(types)];
   }
 }
 

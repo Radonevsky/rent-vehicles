@@ -4,10 +4,21 @@
       <div :class=$style.vehiclesPage>
         <div :class=$style.vehiclesContainer>
           <div :class=$style.options>
-            <h1 :class=$style.filter>Rent <span>whatever</span></h1>
+            <div>
+              <h1 :class=$style.title>Rent</h1>
+              <div :class=$style.forArrow>
+                <select
+                  v-model='filteredType'
+                  :class=$style.select
+                >
+                  <option>whatever</option>
+                  <option v-for='item in vehiclesTypes' :key='item'>{{ item }}</option>
+                </select>
+              </div>
+            </div>
             <div :class=$style.add @click='isModalShow = true'>Add new</div>
           </div>
-          <VehiclesList />
+          <VehiclesList :filteredType='filteredType'/>
         </div>
       </div>
     </div>
@@ -28,9 +39,21 @@ export default {
   layout: 'Vehicles',
   data() {
     return {
+      filteredType: 'whatever',
       isModalShow: false
     }
   },
+  computed: {
+    loadDone() {
+      return this.$store.getters['vehicles/getIsDone']
+    },
+    vehiclesTypes() {
+      if (this.loadDone) {
+        return this.$store.getters['vehicles/getTypes']
+      }
+      return null
+    }
+  }
 }
 </script>
 
@@ -46,35 +69,48 @@ export default {
   .options {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 40px;
+    margin-bottom: 34px;
     font-family: mainBold, sans-serif;
     line-height: 3rem;
-    .filter {
-      position: relative;
+    .title {
+      display: inline;
+      margin-right: 2px;
       font-size: 2.5rem;
       color: $text-dark;
-      padding-right: 30px;
-      span {
-        color: $text-blue;
+    }
+    .select {
+      font-size: 2.5rem;
+      color: $text-blue;
+      font-family: mainBold, sans-serif;
+      border: none;
+      position: relative;
+      background: none;
+      padding-right: 28px;
+      appearance: none;
+      cursor: pointer;
+      &:focus {
+        outline: none;
       }
+    }
+    .forArrow {
+      display: inline;
+      position: relative;
+      cursor: pointer;
       &:after {
         content: "";
         width: 6px;
         height: 6px;
         position: absolute;
         right: 0;
-        top: calc(50% - 6px);
-
+        top: calc(50% - 10px);
         border-right: $text-blue 3px solid;
         border-bottom: $text-blue 3px solid;
         transform: rotate(45deg);
         transition: transform .2s ease;
       }
-/*      &:hover:after {
-          transform: rotate(0deg);
-      }*/
     }
     .add {
+      margin-top: 2px;
       padding-right: 68px;
       position: relative;
 
@@ -88,7 +124,7 @@ export default {
         height: $button-size;
         position: absolute;
         right: 0;
-        top: calc(50% - 24px);
+        top: calc(50% - 28px);
         border-radius: 16px;
 
         background-color: $text-blue;
