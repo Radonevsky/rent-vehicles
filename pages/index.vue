@@ -43,6 +43,7 @@ export default {
       isModalShow: false
     }
   },
+
   computed: {
     loadDone() {
       return this.$store.getters['vehicles/getIsDone']

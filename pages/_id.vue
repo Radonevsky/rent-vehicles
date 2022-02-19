@@ -45,6 +45,13 @@ export default {
     Loading
   },
   layout: 'Vehicles',
+  validate({ params }) {
+    if (params.id.length === 24) {
+      return true
+    } else {
+      return false
+    }
+  },
   computed: {
     id() {
       return this.$route.params.id
