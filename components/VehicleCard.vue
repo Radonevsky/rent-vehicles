@@ -20,9 +20,9 @@ export default {
       type: Object
     }
   },
-  data() {
-    return {
-      id: this.$props.vehicle.id,
+  computed: {
+    id() {
+      return this.$props.vehicle.id
     }
   }
 }

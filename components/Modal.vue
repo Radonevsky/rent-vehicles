@@ -69,7 +69,7 @@ export default {
     },
     addNew() {
       this.$store.commit('vehicles/SET_CUSTOM', {
-        id: `custom${this.currentId}`,
+        id:`${Math.random().toString(16).slice(2)}${Math.random().toString(16).slice(4)}`,
         name: this.formFields[0].value,
         type: "custom",
         description: this.formFields[1].value,
