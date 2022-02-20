@@ -3,7 +3,8 @@ import { getVehicles } from '../api/request'
 export const state = () => ({
   vehicles: [],
   isLoading: false,
-  isLoadDone: false
+  isLoadDone: false,
+  loadError: false
 })
 
 export const getters = {
@@ -17,7 +18,8 @@ export const getters = {
     const types = []
     state.vehicles.forEach(item => types.push(item.type))
     return [...new Set(types)];
-  }
+  },
+  getLoadError: state => state.loadError
 }
 
 export const mutations = {
@@ -36,6 +38,9 @@ export const mutations = {
   SET_CUSTOM(state, payload) {
     state.vehicles.push(payload)
   },
+  SET_LOAD_ERROR(state) {
+    state.loadError = true
+  },
 }
 
 export const actions = {
@@ -46,7 +51,7 @@ export const actions = {
       commit('SET_VEHICLES',  vehicles)
       commit('SET_LOAD_DONE')
     } catch(error) {
-      console.log(error)
+      commit('SET_LOAD_ERROR')
     }
     commit('LOADING_END')
   }

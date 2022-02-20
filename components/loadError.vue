@@ -1,20 +1,23 @@
 <template>
-  <div class='container'>
-    <div :class=$style.errorInner>
-      <div :class=$style.errorText>
-        <h2 :class=$style.title>404 Page not found</h2>
-        <p :class=$style.text>Go back to home page</p>
-        <nuxt-link to='/' :class=$style.link>Home page</nuxt-link>
-      </div>
+<div class='container'>
+  <div :class=$style.errorInner>
+    <div :class=$style.errorText>
+      <h2 :class=$style.title>An error has occurred</h2>
+      <p :class=$style.text>Please refresh the page</p>
+      <button @click='refreshPage' :class=$style.button>Reload page</button>
     </div>
   </div>
+</div>
 </template>
 
 <script>
 export default {
-  name: 'notFound',
-  layout: 'Vehicles',
-  props: ['error'],
+  name: 'loadError',
+  methods: {
+    refreshPage() {
+      window.location.reload(true)
+    }
+  },
 }
 </script>
 
@@ -44,9 +47,10 @@ export default {
   line-height: 120%;
   color: $text-gray;
 }
-.link {
+.button {
   margin-top: 42px;
-  padding: 17px 32px;
+  width: 161px;
+  height: 48px;
   font-family: mainBold, sans-serif;
   font-size: 1rem;
   line-height: 0.875rem;

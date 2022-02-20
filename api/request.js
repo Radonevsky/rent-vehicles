@@ -1,20 +1,20 @@
 import vehicles from './vehicles.json';
 
 /** True = 65%, False = 35% */
-/* const rejectByChance = () => {
+ const rejectByChance = () => {
     return Math.random() <= 0.35;
-}; */
+};
 
 /** Emulate request */
 export const getVehicles = () =>
     new Promise((resolve, reject) => {
-/*        if (rejectByChance()) {
+        if (rejectByChance()) {
             return reject({
                 error: 'Server error',
             });
-        } */
-        // const delay = parseInt(Math.random() * 1000);
+        }
+        const delay = parseInt(Math.random() * 1000);
         setTimeout(() => {
             resolve(vehicles);
-        }, 1000);
+        }, delay);
     });
