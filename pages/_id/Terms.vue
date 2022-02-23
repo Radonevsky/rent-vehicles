@@ -38,7 +38,7 @@ export default {
     font-family: mainLight, sans-serif;
     font-size: 0.875rem;
     line-height: 146%;
-    color: $text-gray;
+    color: $dark-gray;
     &:nth-child(2) {
       margin-top: 16px;
     }
@@ -46,7 +46,7 @@ export default {
   .title {
     margin: 22px 0 24px;
     font-size: 1rem;
-    color: $text-dark;
+    color: $dark-blue;
     line-height: 152%;
   }
   .list {
@@ -61,7 +61,7 @@ export default {
         width: 4px;
         height: 4px;
         border-radius: 50%;
-        background-color: $text-pink;
+        background-color: $pink;
         position: absolute;
         left: 0;
         top: 8px;

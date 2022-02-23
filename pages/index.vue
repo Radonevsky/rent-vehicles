@@ -64,7 +64,7 @@ export default {
 .vehiclesPage {
   width: 100%;
   padding: 56px 28px;
-  background-color: $background-gray;
+  background-color: $light-gray;
   border-radius: 48px;
 
   .options {
@@ -77,11 +77,11 @@ export default {
       display: inline;
       margin-right: 6px;
       font-size: 2.5rem;
-      color: $text-dark;
+      color: $dark-blue;
     }
     .select {
       font-size: 2.5rem;
-      color: $text-blue;
+      color: $blue;
       font-family: mainBold, sans-serif;
       border: none;
       position: relative;
@@ -104,8 +104,8 @@ export default {
         position: absolute;
         right: 0;
         top: calc(50% - 12px);
-        border-right: $text-blue 3px solid;
-        border-bottom: $text-blue 3px solid;
+        border-right: $blue 3px solid;
+        border-bottom: $blue 3px solid;
         transform: rotate(45deg);
         transition: transform .2s ease;
       }
@@ -117,7 +117,7 @@ export default {
 
       cursor: pointer;
       font-size: 1.25rem;
-      color: $text-blue;
+      color: $blue;
 
       &:after {
         content: "";
@@ -128,7 +128,7 @@ export default {
         top: calc(50% - 28px);
         border-radius: 16px;
 
-        background-color: $text-blue;
+        background-color: $blue;
         background-image: url("../static/images/svg/Plus.svg");
         background-repeat: no-repeat;
         background-position: 50% 50%;
@@ -142,6 +142,6 @@ export default {
   }
 }
 .dark {
-  background-color: $text-dark;
+  background-color: $dark-blue;
 }
 </style>

@@ -42,13 +42,13 @@ export default {
     font-family: mainLight, sans-serif;
     font-size: 0.875rem;
     line-height: 146%;
-    color: $text-gray;
+    color: $dark-gray;
 
   }
   .title {
     margin: 32px 0;
     font-size: 1.5rem;
-    color: $text-dark;
+    color: $dark-blue;
   }
   .listSpecialists {
     display: flex;
@@ -68,14 +68,14 @@ export default {
     font-family: mainBold, sans-serif;
     font-size: 1rem;
     line-height: 0.875rem;
-    color: $text-dark;
+    color: $dark-blue;
   }
   .itemProfession {
     margin-top: 9px;
     font-family: mainLight, sans-serif;
     font-size: 0.75rem;
     line-height: 148%;
-    color: $text-gray;
+    color: $dark-gray;
   }
 }
 </style>

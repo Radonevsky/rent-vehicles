@@ -1,7 +1,7 @@
 <template>
   <header :class=$style.header>
      <div class='container'>
-       <div :class='[$style.flexContainer, $style.flex]'>
+       <div :class='[$style.flexContainer, $style.flex, darkMode ? $style.backgroundDark : null]'>
          <div :class='[$style.logo, $style.flex]'>
            <nuxt-link to='/'>
            <img :class=$style.logoImg src='../static/images/svg/LogoLight.svg' alt='Logo'>
@@ -9,7 +9,7 @@
            <div :class=$style.logoDescription><p>World's first affordable airsharing</p></div>
          </div>
          <nav :class='[$style.nav, $style.flex]'>
-           <div :class=$style.nightToggle>Night mod</div>
+           <div :class=$style.nightToggle @click='darkModeOn'>Night mod</div>
            <div :class='[$style.user, $style.flex]'>
              <div :class=$style.alerts>
                <div :class=$style.userMessages></div>
@@ -28,13 +28,32 @@
 </template>
 
 <script>
+import { mapMutations } from 'vuex'
+
 export default {
-  name: 'MainHeader'
+  name: 'MainHeader',
+  computed: {
+    isLoading() {
+      return this.$store.getters['vehicles/getIsDarkMode']
+    },
+    darkMode() {
+      return this.$store.getters['vehicles/getIsDarkMode']
+    }
+  },
+  methods: {
+    ...mapMutations({
+      darkModeOn: 'vehicles/SET_DARK_MODE_ON'
+    }),
+    ...mapMutations({
+      darkModeOff: 'vehicles/SET_DARK_MODE_OFF'
+    })
+  },
 }
 </script>
 
 <style lang='scss' module>
 @import '../assets/scss/vars';
+
 .header {
   height: 136px;
   align-items: center;
@@ -58,7 +77,7 @@ export default {
     }
     .logoDescription {
       font-family: mainLight, sans-serif;
-      color: $text-gray;
+      color: $dark-gray;
       font-size: 1rem;
     }
   }
@@ -111,6 +130,9 @@ export default {
       }
     }
   }
+}
 
+.backgroundDark {
+  background-color: $dark-blue;
 }
 </style>

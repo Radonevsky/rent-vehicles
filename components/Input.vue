@@ -36,15 +36,15 @@ export default {
   margin-top: 24px;
   padding: 21px 24px;
 
-  background-color: $background-gray;
-  color: $text-dark;
+  background-color: $light-gray;
+  color: $dark-blue;
   border: none;
   border-radius: 12px;
   font-family: mainLight, sans-serif;
   font-size: 1rem;
   line-height: 0.875rem;
 &::placeholder {
-   color: $text-gray;
+   color: $dark-gray;
  }
 &:focus {
    outline: none;

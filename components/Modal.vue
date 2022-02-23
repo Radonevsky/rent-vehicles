@@ -111,7 +111,7 @@ export default {
   right: 0;
   border-radius: 48px 0 0 48px;
 
-  background-color: $background-white;
+  background-color: $white;
 }
 
 .modalHeader {
@@ -121,14 +121,14 @@ export default {
     font-family: mainBold, sans-serif;
     font-size: 2.5rem;
     line-height: 120%;
-    color: $text-dark;
+    color: $dark-blue;
   }
   .close {
     width: $button-size;
     height: $button-size;
     position: relative;
 
-    background-color: $background-gray;
+    background-color: $light-gray;
     border-radius: 16px;
     border: none;
     &:before, &:after {
@@ -138,7 +138,7 @@ export default {
       left: 50%;
       width: 2px;
       height: 16px;
-      background-color: $text-dark;
+      background-color: $dark-blue;
     }
     &:before {
       transform: rotate(45deg);
@@ -160,7 +160,7 @@ export default {
   min-height: 78px;
   margin-top: 40px;
 
-  background-color: $background-gray;
+  background-color: $light-gray;
   position: relative;
   border-radius: 24px;
   .addImg {
@@ -170,7 +170,7 @@ export default {
     left: calc(50% - 24px);
     width: 48px;
     height: 48px;
-    background-color: $background-white;
+    background-color: $white;
     border-radius: 16px;
     background-image: url("../static/images/svg/AddImg.svg");
     background-repeat: no-repeat;
@@ -188,8 +188,8 @@ export default {
   margin-top: 40px;
   width: 100%;
   min-height: 56px;
-  background-color: $text-blue;
-  color: $background-white;
+  background-color: $blue;
+  color: $white;
   border: none;
   border-radius: 12px;
 }

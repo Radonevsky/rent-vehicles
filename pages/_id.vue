@@ -94,7 +94,7 @@ export default {
       font-family: mainBold, sans-serif;
       font-size: 2.5rem;
       line-height: 120%;
-      color: $text-dark;
+      color: $dark-blue;
     }
     .links {
       display: flex;
@@ -108,10 +108,10 @@ export default {
       line-height: 14px;
       font-family: mainBold, sans-serif;
       text-decoration: none;
-      color: $text-gray;
+      color: $dark-gray;
     }
     .activeLink {
-      color: $text-blue;
+      color: $blue;
     }
 
   }
@@ -127,15 +127,15 @@ export default {
     max-width: 536px;
     min-height: 80px;
     padding: 0 32px;
-    background-color: $background-gray;
+    background-color: $light-gray;
     border-radius: 16px;
     .rentText {
       font-family: mainBold, sans-serif;
       font-size: 1.25rem;
       line-height: 140%;
-      color: $text-dark;
+      color: $dark-blue;
       span {
-        color: $text-pink;
+        color: $pink;
       }
     }
     .rentButton {
@@ -144,8 +144,8 @@ export default {
       font-family: mainBold, sans-serif;
       font-size: 1rem;
       line-height: 0.875rem;
-      color: $background-white;
-      background-color: $text-blue;
+      color: $white;
+      background-color: $blue;
       border-radius: 12px;
       border: none;
     }

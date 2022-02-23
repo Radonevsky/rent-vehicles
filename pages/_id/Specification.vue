@@ -40,7 +40,7 @@ export default {
 @import "assets/scss/vars";
 
 .specification {
-  color: $text-gray;
+  color: $dark-gray;
 
   .description {
     font-size: 0.875rem;
@@ -50,7 +50,7 @@ export default {
   .title {
     margin: 32px 0;
     font-size: 1.5rem;
-    color: $text-dark;
+    color: $dark-blue;
   }
 
   .features {
@@ -66,7 +66,7 @@ export default {
     .icon {
       min-width: 80px;
       height: 96px;
-      background-color: $background-gray;
+      background-color: $light-gray;
       border-radius: 16px;
       background-repeat: no-repeat;
       background-position: 50% 50%;
@@ -84,7 +84,7 @@ export default {
       font-family: mainBold, sans-serif;
       font-size: 1rem;
       line-height: 152%;
-      color: $text-dark;
+      color: $dark-blue;
     }
 
     .itemDescription {

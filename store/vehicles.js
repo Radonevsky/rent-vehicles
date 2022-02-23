@@ -4,7 +4,8 @@ export const state = () => ({
   vehicles: [],
   isLoading: false,
   isLoadDone: false,
-  loadError: false
+  loadError: false,
+  darkMode: false,
 })
 
 export const getters = {
@@ -19,7 +20,8 @@ export const getters = {
     state.vehicles.forEach(item => types.push(item.type))
     return [...new Set(types)];
   },
-  getLoadError: state => state.loadError
+  getLoadError: state => state.loadError,
+  getIsDarkMode: state => state.darkMode,
 }
 
 export const mutations = {
@@ -40,6 +42,14 @@ export const mutations = {
   },
   SET_LOAD_ERROR(state) {
     state.loadError = true
+  },
+  SET_DARK_MODE_ON(state) {
+    localStorage.isDarkMode = true
+    state.darkMode = true
+  },
+  SET_DARK_MODE_OFF(state) {
+    localStorage.isDarkMode = false
+    state.darkMode = false
   },
 }
 

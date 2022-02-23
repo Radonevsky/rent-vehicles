@@ -41,7 +41,7 @@ export default {
 
   cursor: pointer;
   border-radius: 32px;
-  background-color: $background-white;
+  background-color: $white;
 
   .img {
     display: inline-block;
@@ -60,7 +60,7 @@ export default {
     .title {
       font-family: mainBold, sans-serif;
       font-size: 1rem;
-      color: $text-dark;
+      color: $dark-blue;
       line-height: 0.875rem;
     }
 
@@ -70,14 +70,14 @@ export default {
       font-family: mainLight, sans-serif;
       font-size: 0.75rem;
       line-height: 148%;
-      color: $text-gray;
+      color: $dark-gray;
     }
 
     .price {
       margin-top: 20px;
       font-family: mainBold, sans-serif;
       font-size: 0.875rem;
-      color: $text-pink;
+      color: $pink;
     }
   }
 }

@@ -25,7 +25,7 @@ export default {
   align-items: center;
   justify-content: center;
   min-height: 708px;
-  background-color: $background-gray;
+  background-color: $light-gray;
   border-radius: 48px;
 }
 .errorText {
@@ -35,14 +35,14 @@ export default {
   font-family: mainBold, sans-serif;
   font-size: 2.5rem;
   line-height: 120%;
-  color: $text-dark;
+  color: $dark-blue;
 }
 .text {
   margin-top: 25px;
   font-family: mainLight, sans-serif;
   font-size: 0.875rem;
   line-height: 120%;
-  color: $text-gray;
+  color: $dark-gray;
 }
 .link {
   margin-top: 42px;
@@ -50,8 +50,8 @@ export default {
   font-family: mainBold, sans-serif;
   font-size: 1rem;
   line-height: 0.875rem;
-  color: $background-white;
-  background-color: $text-blue;
+  color: $white;
+  background-color: $blue;
   border-radius: 12px;
   border: none;
 }
