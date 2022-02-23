@@ -19,7 +19,7 @@ export default {
   },
   created() {
     this.$store.dispatch('vehicles/loadVehicles')
-    if (localStorage.isDarkMode) {
+    if (localStorage.isDarkMode === 'true') {
       this.darkModeOn()
     }
   },

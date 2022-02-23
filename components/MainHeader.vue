@@ -1,15 +1,30 @@
 <template>
-  <header :class=$style.header>
+  <header :class='[$style.header, darkMode ? $style.dark : null]' >
      <div class='container'>
-       <div :class='[$style.flexContainer, $style.flex, darkMode ? $style.backgroundDark : null]'>
+       <div :class='[$style.flexContainer, $style.flex]'>
          <div :class='[$style.logo, $style.flex]'>
            <nuxt-link to='/'>
-           <img :class=$style.logoImg src='../static/images/svg/LogoLight.svg' alt='Logo'>
+           <img
+             :src='logo'
+             :class=$style.logoImg
+             alt='Logo'
+             >
            </nuxt-link>
            <div :class=$style.logoDescription><p>World's first affordable airsharing</p></div>
          </div>
          <nav :class='[$style.nav, $style.flex]'>
-           <div :class=$style.nightToggle @click='darkModeOn'>Night mod</div>
+
+           <div
+             v-if='!darkMode'
+             :class=$style.nightToggle
+             @click='darkModeOn'
+           >Night mod</div>
+           <div
+             v-else
+             :class=$style.nightToggle
+             @click='darkModeOff'
+           >Day mod</div>
+
            <div :class='[$style.user, $style.flex]'>
              <div :class=$style.alerts>
                <div :class=$style.userMessages></div>
@@ -38,6 +53,12 @@ export default {
     },
     darkMode() {
       return this.$store.getters['vehicles/getIsDarkMode']
+    },
+    logo() {
+      if (this.darkMode === true) {
+        return require('../static/images/svg/LogoDark.svg')
+      }
+      return require('../static/images/svg/LogoLight.svg')
     }
   },
   methods: {
@@ -57,6 +78,7 @@ export default {
 .header {
   height: 136px;
   align-items: center;
+  transition: all 0.1s linear;
   .flex {
     display: flex;
   }
@@ -79,6 +101,7 @@ export default {
       font-family: mainLight, sans-serif;
       color: $dark-gray;
       font-size: 1rem;
+      transition: all 0.1s linear;
     }
   }
 
@@ -93,6 +116,7 @@ export default {
       position: relative;
       min-width: 24px;
       min-height: 24px;
+      color: $dark-gray;
 
       font-family: mainLight, sans-serif;
       background: url("../static/images/svg/Moon.svg") no-repeat;
@@ -123,6 +147,7 @@ export default {
         .userName {
           font-family: mainBold, sans-serif;
           margin-right: 1rem;
+          transition: all 0.1s linear;
         }
         .userPhoto {
           border-radius: 50%;
@@ -132,7 +157,24 @@ export default {
   }
 }
 
-.backgroundDark {
+.dark {
   background-color: $dark-blue;
+  .logoDescription {
+    color: $gray;
+  }
+  .nightToggle {
+    color: $gray;
+    background: url("../static/images/svg/Sun.svg") no-repeat;
+  }
+  .userMessages {
+    background: url("../static/images/svg/MessageDark.svg") no-repeat;
+  }
+  .userAlerts {
+    background: url("../static/images/svg/BellDark.svg") no-repeat;
+  }
+  .userName {
+    color: $white;
+    transition: all 0.1s linear;
+  }
 }
 </style>
