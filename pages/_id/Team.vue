@@ -1,5 +1,5 @@
 <template>
-  <div :class=$style.team>
+  <div :class='[$style.team, darkMode ? $style.dark : null]'>
     <p :class='$style.description'>
       Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.
     </p>
@@ -30,7 +30,12 @@
 
 <script>
 export default {
-  name: 'teamChild'
+  name: 'teamChild',
+  computed: {
+    darkMode() {
+      return this.$store.getters['vehicles/getIsDarkMode']
+    }
+  }
 }
 </script>
 
@@ -76,6 +81,26 @@ export default {
     font-size: 0.75rem;
     line-height: 148%;
     color: $dark-gray;
+  }
+}
+
+.dark {
+  .description {
+    color: $gray;
+  }
+  .title {
+    color: $white;
+  }
+  .listSpecialists {
+    display: flex;
+    gap: 25px;
+    margin-bottom: 31px;
+  }
+  .itemName {
+    color: $white;
+  }
+  .itemProfession {
+    color: $gray;
   }
 }
 </style>

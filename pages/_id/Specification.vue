@@ -1,5 +1,5 @@
 <template>
-  <div :class='$style.specification'>
+  <div :class='[$style.specification, darkMode ? $style.dark : null]'>
     <p :class='$style.description'>
       Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit
       mollit. Exercitation veniam consequat sunt nostrud amet.
@@ -32,7 +32,12 @@
 
 <script>
 export default {
-  name: 'specChild'
+  name: 'specChild',
+  computed: {
+    darkMode()  {
+      return this.$store.getters['vehicles/getIsDarkMode']
+    }
+  }
 }
 </script>
 
@@ -95,5 +100,30 @@ export default {
   }
 }
 
+.dark {
+  .title {
+    color: $white;
+  }
+  .description {
+    color: $gray;
+  }
+  .features {
+    .icon {
+      background-color: $darkest-blue;
+    }
+    .itemTitle {
+      color: $white;
+    }
+    .cup {
+      background-image: url("../../static/images/svg/CupLightGray.svg");
+    }
+    .pilot {
+      background-image: url("../../static/images/svg/ManLightGray.svg");
+    }
+  }
+  .itemDescription {
+    color: $gray;
+  }
+}
 
 </style>

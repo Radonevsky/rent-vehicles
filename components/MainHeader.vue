@@ -78,7 +78,6 @@ export default {
 .header {
   height: 136px;
   align-items: center;
-  transition: all 0.1s linear;
   .flex {
     display: flex;
   }
@@ -101,7 +100,6 @@ export default {
       font-family: mainLight, sans-serif;
       color: $dark-gray;
       font-size: 1rem;
-      transition: all 0.1s linear;
     }
   }
 
@@ -147,7 +145,6 @@ export default {
         .userName {
           font-family: mainBold, sans-serif;
           margin-right: 1rem;
-          transition: all 0.1s linear;
         }
         .userPhoto {
           border-radius: 50%;
@@ -159,22 +156,28 @@ export default {
 
 .dark {
   background-color: $dark-blue;
-  .logoDescription {
-    color: $gray;
+  .logo {
+    .logoImg {
+    }
+    .logoDescription {
+      color: $gray;
+    }
   }
-  .nightToggle {
-    color: $gray;
-    background: url("../static/images/svg/Sun.svg") no-repeat;
+  .nav {
+    .nightToggle {
+      color: $gray;
+      background: url("../static/images/svg/Sun.svg") no-repeat;
+    }
+    .userMessages {
+      background: url("../static/images/svg/MessageDark.svg") no-repeat;
+    }
+    .userAlerts {
+      background: url("../static/images/svg/BellDark.svg") no-repeat;
+    }
+    .userName {
+      color: $white;
+    }
   }
-  .userMessages {
-    background: url("../static/images/svg/MessageDark.svg") no-repeat;
-  }
-  .userAlerts {
-    background: url("../static/images/svg/BellDark.svg") no-repeat;
-  }
-  .userName {
-    color: $white;
-    transition: all 0.1s linear;
-  }
+
 }
 </style>

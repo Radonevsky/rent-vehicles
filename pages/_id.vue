@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div :class='[darkMode ? $style.dark : null]'>
     <div class='container'>
       <Loading v-if='isLoading' :class=$style.loading />
       <div v-if='loadDone' :class=$style.inner >
@@ -64,6 +64,9 @@ export default {
     },
     currentVehicle() {
       return this.$store.getters['vehicles/getCurrentVehicle'](this.id)
+    },
+    darkMode() {
+      return this.$store.getters['vehicles/getIsDarkMode']
     },
   },
 }
@@ -154,5 +157,31 @@ export default {
 .loading {
   position: absolute;
   top: 50vh;
+}
+
+.dark {
+  background-color: $dark-blue;
+  .inner {
+    .info {
+      .title {
+        color: $white;
+      }
+    }
+    .link {
+      color: $gray;
+    }
+    .activeLink {
+      color: $blue;
+    }
+    .rent {
+      background-color: $darkest-blue;
+      .rentText {
+        color: $white;
+        span {
+          color: $pink;
+        }
+      }
+    }
+  }
 }
 </style>

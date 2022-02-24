@@ -1,5 +1,5 @@
 <template>
-  <div :class=$style.mainPage>
+  <div :class='[$style.mainPage, darkMode ? $style.dark : null]'>
     <MainHeader />
     <Nuxt v-if='getError === false'/>
     <LoadError v-else/>
@@ -17,15 +17,18 @@ export default {
     MainHeader,
     loadError
   },
+  computed: {
+    getError() {
+      return this.$store.getters['vehicles/getLoadError']
+    },
+    darkMode() {
+      return this.$store.getters['vehicles/getIsDarkMode']
+    }
+  },
   created() {
     this.$store.dispatch('vehicles/loadVehicles')
     if (localStorage.isDarkMode === 'true') {
       this.darkModeOn()
-    }
-  },
-  computed: {
-    getError() {
-      return this.$store.getters['vehicles/getLoadError']
     }
   },
   methods: {
@@ -37,7 +40,11 @@ export default {
 </script>
 
 <style lang='scss' module>
+@import "assets/scss/vars";
 .mainPage {
   padding-bottom: 48px;
+}
+.dark {
+  background-color: $dark-blue;
 }
 </style>

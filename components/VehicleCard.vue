@@ -1,6 +1,6 @@
 <template>
   <nuxt-link :to='{ path: `${id}/specification` }'>
-    <div :class=$style.vehicleCard>
+    <div :class='[$style.vehicleCard, darkMode ? $style.dark : null]'>
       <img :class=$style.img :src='$props.vehicle.preview' alt='vehicle preview'>
       <div :class=$style.inform>
         <h3 :class=$style.title>{{ $props.vehicle.name }}</h3>
@@ -23,6 +23,9 @@ export default {
   computed: {
     id() {
       return this.$props.vehicle.id
+    },
+    darkMode() {
+      return this.$store.getters['vehicles/getIsDarkMode']
     }
   }
 }
@@ -77,6 +80,21 @@ export default {
       margin-top: 20px;
       font-family: mainBold, sans-serif;
       font-size: 0.875rem;
+      color: $pink;
+    }
+  }
+}
+
+.dark {
+  background-color: $dark-blue;
+  .inform {
+    .title {
+      color: $white;
+    }
+    .description {
+      color: $gray;
+    }
+    .price {
       color: $pink;
     }
   }

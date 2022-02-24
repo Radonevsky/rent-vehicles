@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div :class='[$style.wrapper, darkMode ? $style.dark : null]'>
     <div class='container'>
       <div :class=$style.vehiclesPage>
         <div :class=$style.vehiclesContainer>
@@ -53,7 +53,10 @@ export default {
         return this.$store.getters['vehicles/getTypes']
       }
       return null
-    }
+    },
+    darkMode() {
+    return this.$store.getters['vehicles/getIsDarkMode']
+    },
   }
 }
 </script>
@@ -61,12 +64,17 @@ export default {
 <style lang='scss' module>
 @import "assets/scss/vars";
 
+.wrapper {
+  background-color: $white;
+}
 .vehiclesPage {
   width: 100%;
   padding: 56px 28px;
   background-color: $light-gray;
   border-radius: 48px;
-
+  .vehiclesContainer {
+    background-color: $light-gray;
+  }
   .options {
     display: flex;
     justify-content: space-between;
@@ -143,5 +151,16 @@ export default {
 }
 .dark {
   background-color: $dark-blue;
+  .vehiclesPage {
+    background-color: $darkest-blue;
+  }
+  .vehiclesContainer {
+    background-color: $darkest-blue;
+  }
+  .options {
+    .title {
+      color: $white;
+    }
+  }
 }
 </style>
