@@ -2,7 +2,7 @@
   <div :class='[$style.mainPage, darkMode ? $style.dark : null]'>
     <MainHeader />
     <Nuxt v-if='getError === false'/>
-    <LoadError v-else/>
+    <LoadError v-else :darkMode='darkMode'/>
   </div>
 </template>
 

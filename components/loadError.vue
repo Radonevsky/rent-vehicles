@@ -1,6 +1,6 @@
 <template>
 <div class='container'>
-  <div :class=$style.errorInner>
+  <div :class='[$style.errorInner, $props.darkMode ? $style.dark : null]'>
     <div :class=$style.errorText>
       <h2 :class=$style.title>An error has occurred</h2>
       <p :class=$style.text>Please refresh the page</p>
@@ -13,6 +13,9 @@
 <script>
 export default {
   name: 'loadError',
+  props: {
+    darkMode: Boolean
+  },
   methods: {
     refreshPage() {
       window.location.reload(true)
@@ -58,5 +61,15 @@ export default {
   background-color: $blue;
   border-radius: 12px;
   border: none;
+}
+
+.dark {
+  background-color: $darkest-blue;
+  .title {
+    color: $white;
+  }
+  .text {
+    color: $gray;
+  }
 }
 </style>
