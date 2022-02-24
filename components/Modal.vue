@@ -1,5 +1,5 @@
 <template>
-  <div :class=$style.wrapper>
+  <div :class='[$style.wrapper, $props.darkMode ? $style.dark : null]'>
     <div :class=$style.modal>
       <div :class=$style.modalHeader>
         <h2 :class=$style.title>Add new vehicle</h2>
@@ -16,6 +16,7 @@
           :key=item.id
           :name=item.name
           :index=item.id
+          :darkMode=$props.darkMode
           @inputChange='inputChange($event)'
         />
         <button :class=$style.button type='submit'>Complete</button>
@@ -29,6 +30,9 @@ import Input from './Input'
 
 export default {
   name: 'ModalAdd',
+  props: {
+    darkMode: Boolean
+  },
   components: {
     Input
   },
@@ -192,6 +196,45 @@ export default {
   color: $white;
   border: none;
   border-radius: 12px;
+}
+
+.dark {
+  .wrapper {
+    background: $background-modal-dark;
+  }
+  .modal {
+    background-color: $dark-blue;
+  }
+  .modalHeader {
+    .title {
+      color: $white;
+    }
+    .close {
+      background-color: $darkest-blue;
+      &:before, &:after {
+        background-color: $white;
+      }
+    }
+  }
+  .addImgWrapper {
+    background-color: $darkest-blue;
+    .addImg {
+      background-color: $dark-blue;
+    }
+    input {
+      color: $gray;
+    }
+  }
+
+  .button {
+    margin-top: 40px;
+    width: 100%;
+    min-height: 56px;
+    background-color: $blue;
+    color: $white;
+    border: none;
+    border-radius: 12px;
+  }
 }
 
 

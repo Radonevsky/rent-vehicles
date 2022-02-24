@@ -22,7 +22,7 @@
         </div>
       </div>
     </div>
-    <Modal v-if='isModalShow === true' @close='isModalShow = false'/>
+    <Modal v-if='isModalShow === true' :darkMode='darkMode' @close='isModalShow = false'/>
   </div>
 </template>
 <script>

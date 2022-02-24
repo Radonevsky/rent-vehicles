@@ -1,5 +1,5 @@
 <template>
-  <label>
+  <label :class='$props.darkMode ? $style.dark : null'>
     <input
       v-model='value'
       :class='[$style.formItem, $style.name]'
@@ -16,15 +16,14 @@ export default {
   name: 'MyInput',
   props: {
     name: String,
-    index: Number
+    index: Number,
+    darkMode: Boolean
   },
   data() {
     return {
       value: ''
     }
   },
-  methods: {
-  }
 }
 </script>
 
@@ -50,5 +49,17 @@ export default {
    outline: none;
    box-shadow: 0 0 3px 2px rgba(73, 89, 255, 0.3);
  }
+}
+.dark {
+  .formItem {
+    background-color: $darkest-blue;
+    color: $white;
+    &::placeholder {
+      color: $gray;
+    }
+    &:focus {
+      box-shadow: 0 0 3px 2px rgba(73, 89, 255, 0.5);
+    }
+  }
 }
 </style>

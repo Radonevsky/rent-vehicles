@@ -43,6 +43,7 @@ export default {
 @import "assets/scss/vars";
 .mainPage {
   padding-bottom: 48px;
+  min-height: 100vh;
 }
 .dark {
   background-color: $dark-blue;
