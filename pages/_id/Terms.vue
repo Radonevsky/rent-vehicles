@@ -1,5 +1,5 @@
 <template>
-  <div :class=$style.terms>
+  <div :class='[$style.terms, darkMode ? $style.dark : null]'>
     <p :class=$style.text>
       Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.
     </p>
@@ -26,7 +26,12 @@
 
 <script>
 export default {
-  name: 'termsChild'
+  name: 'termsChild',
+  computed: {
+    darkMode()  {
+      return this.$store.getters['vehicles/getIsDarkMode']
+    }
+  }
 }
 </script>
 
@@ -67,6 +72,11 @@ export default {
         top: 8px;
       }
     }
+  }
+}
+.dark {
+  .text {
+    color: $gray;
   }
 }
 </style>
