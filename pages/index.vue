@@ -63,6 +63,7 @@ export default {
 
 <style lang='scss' module>
 @import "assets/scss/vars";
+@import "assets/scss/mixins";
 
 .wrapper {
   background-color: $white;
@@ -85,10 +86,16 @@ export default {
       display: inline;
       margin-right: 6px;
       font-size: 2.5rem;
+      @include for-phone-only {
+        font-size: 1.5rem;
+      }
       color: $dark-blue;
     }
     .select {
       font-size: 2.5rem;
+      @include for-phone-only {
+        font-size: 1.5rem;
+      }
       color: $blue;
       font-family: mainBold, sans-serif;
       border: none;
@@ -125,12 +132,22 @@ export default {
 
       cursor: pointer;
       font-size: 1.25rem;
+      @include for-phone-only {
+        font-size: 1rem;
+        padding-right: 48px;
+      }
       color: $blue;
 
       &:after {
         content: "";
         width: $button-size;
         height: $button-size;
+        @include for-phone-only {
+          width: $button-size-phone;
+          height: $button-size-phone;
+          border-radius: 8px;
+          top: calc(50% - 18px);
+        }
         position: absolute;
         right: 0;
         top: calc(50% - 28px);

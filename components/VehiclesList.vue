@@ -47,9 +47,16 @@ export default {
 
 <style lang='scss' module>
 @import "assets/scss/vars";
+@import "assets/scss/mixins";
+
   .list {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 32px;
+    @include for-tablet-landscape {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+    }
   }
 </style>

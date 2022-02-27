@@ -26,6 +26,8 @@ export default {
 
 <style lang='scss' module>
 @import "assets/scss/vars";
+@import "assets/scss/mixins";
+
 .errorInner {
   display: flex;
   align-items: center;

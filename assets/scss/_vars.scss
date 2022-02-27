@@ -1,3 +1,5 @@
+@import "mixins";
+
 $background-modal: rgba(52, 79, 106, 0.32);
 $background-modal-dark: rgba(0, 7, 14, 0.32);
 $white: #FCFCFC;
@@ -10,3 +12,4 @@ $darkest-blue: #011C37;
 $pink: #F84AB3;
 
 $button-size: 48px;
+$button-size-phone: 32px;

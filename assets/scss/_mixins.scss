@@ -1,0 +1,7 @@
+@mixin for-phone-only {
+  @media (max-width: 570px) { @content; }
+}
+
+@mixin for-tablet-landscape {
+  @media (max-width: 1080px) { @content; }
+}
