@@ -3,5 +3,5 @@
 }
 
 @mixin for-tablet-landscape {
-  @media (max-width: 1080px) { @content; }
+  @media (max-width: 1150px) { @content; }
 }

@@ -1,9 +1,9 @@
 <template>
-  <div :class='[darkMode ? $style.dark : null]'>
+  <div :class='[$style.vehiclePage, darkMode ? $style.dark : null]'>
     <div class='container'>
       <Loading v-if='isLoading' :class=$style.loading />
       <div v-if='loadDone' :class=$style.inner >
-        <img :class=$style.img :src=currentVehicle.image alt='Vehicle image'>
+        <div :class=$style.imgInner><img :class=$style.img :src=currentVehicle.image alt='Vehicle image'></div>
         <div :class=$style.info>
           <h2 :class=$style.title>{{ currentVehicle.name }}</h2>
           <ul :class=$style.links>
@@ -26,9 +26,11 @@
           <div :class=$style.linksContent>
             <nuxt-child />
           </div>
-          <div :class=$style.rent>
-            <p :class=$style.rentText>Rent for <span>{{ currentVehicle.rent }} $/h</span></p>
-            <button :class=$style.rentButton>Rent now</button>
+          <div :class=$style.rentInner>
+            <div :class=$style.rent>
+              <p :class=$style.rentText>Rent for <span>{{ currentVehicle.rent }} $/h</span></p>
+              <button :class=$style.rentButton>Rent now</button>
+            </div>
           </div>
         </div>
       </div>
@@ -74,30 +76,61 @@ export default {
 
 <style lang='scss' module>
 @import "assets/scss/vars";
+@import "assets/scss/mixins";
+
+.vehiclePage {
+  padding: 0 28px;
+  @include for-phone-only {
+    padding: 0 16px;
+  }
+}
 
 .inner {
   display: flex;
   gap: 64px;
   margin-bottom: 56px;
+  @include for-tablet-landscape {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 22px;
+  }
+  .imgInner{
+    flex: 2 1 712px;
+    @include for-tablet-landscape {
+      flex-grow: 0;
+    }
+  }
   .img {
-    display: inline-block;
-    min-width: 712px;
     max-width: 712px;
     width: 100%;
+    height: auto;
     max-height: 700px;
+/*    min-width: 712px;
+    max-width: 712px;
+    width: 100%;
+    max-height: 700px;*/
     overflow: hidden;
     border-radius: 24px;
   }
 
   .info {
     display: flex;
+    flex: 1 1 536px;
     flex-direction: column;
     padding-top: 56px;
+    position: relative;
+    @include for-tablet-landscape {
+      flex-grow: 0;
+      padding-top: 0;
+    }
     .title {
       font-family: mainBold, sans-serif;
       font-size: 2.5rem;
       line-height: 120%;
       color: $dark-blue;
+      @include for-phone-only {
+        font-size: 1.5rem;
+      }
     }
     .links {
       display: flex;
@@ -123,6 +156,21 @@ export default {
     min-height: 398px;
   }
 
+  .rentInner {
+    margin-top: 20px;
+    @include for-phone-only {
+      margin-top: 0;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 0 16px 32px 16px;
+      z-index: 0;
+      background-color: $white;
+      box-shadow: -4px -3px 12px 5px $white;
+    }
+  }
+
   .rent {
     display: flex;
     justify-content: space-between;
@@ -130,6 +178,11 @@ export default {
     max-width: 536px;
     min-height: 80px;
     padding: 0 32px;
+    @include for-phone-only {
+      padding: 0 24px;
+      z-index: 1;
+      width: 100%;
+    }
     background-color: $light-gray;
     border-radius: 16px;
     .rentText {
@@ -139,6 +192,9 @@ export default {
       color: $dark-blue;
       span {
         color: $pink;
+      }
+      @include for-phone-only {
+        font-size: 1rem;
       }
     }
     .rentButton {
@@ -151,6 +207,11 @@ export default {
       background-color: $blue;
       border-radius: 12px;
       border: none;
+      @include for-phone-only {
+        width: 111px;
+        height: 44px;
+        font-size: 0.875rem;
+      }
     }
   }
 }

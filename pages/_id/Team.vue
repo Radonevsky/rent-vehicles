@@ -7,18 +7,18 @@
     <ul :class='$style.listSpecialists'>
       <li :class='$style.itemSpecialists'>
         <img :class='$style.img' src='../../static/images/Marvin.jpg' alt='McKinney'>
-        <h3 :class='$style.itemName'>Marvin McKinney</h3>
-        <p :class='$style.itemProfession'>Pilot assistant</p>
+        <div><h3 :class='$style.itemName'>Marvin McKinney</h3>
+          <p :class='$style.itemProfession'>Pilot assistant</p></div>
       </li>
       <li :class='$style.itemSpecialists'>
         <img :class='$style.img' src='../../static/images/Savannah.jpg' alt='Nguyen'>
-        <h3 :class='$style.itemName'>Savannah Nguyen</h3>
-        <p :class='$style.itemProfession'>Mechanic</p>
+        <div><h3 :class='$style.itemName'>Savannah Nguyen</h3>
+          <p :class='$style.itemProfession'>Mechanic</p></div>
       </li>
       <li :class='$style.itemSpecialists'>
         <img :class='$style.img' src='../../static/images/Courtney.jpg' alt='Henry'>
-        <h3 :class='$style.itemName'>Courtney Henry</h3>
-        <p :class='$style.itemProfession'>Stewardess</p>
+        <div><h3 :class='$style.itemName'>Courtney Henry</h3>
+          <p :class='$style.itemProfession'>Stewardess</p></div>
       </li>
     </ul>
     <p :class=$style.description>
@@ -41,6 +41,7 @@ export default {
 
 <style lang='scss' module>
 @import "../../assets/scss/vars";
+@import "../../assets/scss/mixins";
 
 .team {
   .description {
@@ -54,11 +55,24 @@ export default {
     margin: 32px 0;
     font-size: 1.5rem;
     color: $dark-blue;
+    @include for-phone-only {
+      font-size: 1rem;
+    }
+
   }
   .listSpecialists {
     display: flex;
     gap: 25px;
     margin-bottom: 31px;
+    @include for-phone-only {
+      flex-wrap: wrap;
+    }
+  }
+  .itemSpecialists {
+    @include for-phone-only {
+      display: flex;
+      gap: 16px;
+    }
   }
   .img {
     max-width: 162px;

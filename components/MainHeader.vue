@@ -23,7 +23,7 @@
              v-else
              :class=$style.nightToggle
              @click='darkModeOff'
-           >Day mod</div>
+           ><span>Day mod</span></div>
 
            <div :class=$style.user>
              <div :class=$style.alerts>
@@ -77,6 +77,7 @@ export default {
 @import '../assets/scss/mixins';
 
 .header {
+  padding: 0 28px;
   height: 136px;
   align-items: center;
   @include for-phone-only {
@@ -134,6 +135,7 @@ export default {
       min-width: 24px;
       min-height: 24px;
       color: $dark-gray;
+      cursor: pointer;
 
       font-family: mainLight, sans-serif;
       background: url("../static/images/svg/Moon.svg") no-repeat;

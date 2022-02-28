@@ -43,6 +43,7 @@ export default {
 
 <style lang='scss' module>
 @import "assets/scss/vars";
+@import "assets/scss/mixins";
 
 .specification {
   color: $dark-gray;
@@ -56,12 +57,19 @@ export default {
     margin: 32px 0;
     font-size: 1.5rem;
     color: $dark-blue;
+    @include for-phone-only {
+      margin: 20px 0;
+      font-size: 1.25rem;
+    }
   }
 
   .features {
     display: flex;
     flex-direction: column;
     gap: 16px;
+    @include for-phone-only {
+      gap: 12px;
+    }
 
     .featuresItem {
       display: flex;
@@ -90,12 +98,18 @@ export default {
       font-size: 1rem;
       line-height: 152%;
       color: $dark-blue;
+      @include for-phone-only {
+        margin-top: 4px;
+      }
     }
 
     .itemDescription {
       margin-top: 6px;
       font-size: 0.875rem;
       line-height: 146%;
+      @include for-phone-only {
+        margin-top: 3px;
+      }
     }
   }
 }
@@ -115,10 +129,10 @@ export default {
       color: $white;
     }
     .cup {
-      background-image: url("../../static/images/svg/CupLightGray.svg");
+      background: url("../../static/images/svg/CupLightGray.svg");
     }
     .pilot {
-      background-image: url("../../static/images/svg/ManLightGray.svg");
+      background: url("../../static/images/svg/ManLightGray.svg");
     }
   }
   .itemDescription {
