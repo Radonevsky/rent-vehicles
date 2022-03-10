@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="9b01066f-18a9-4f82-b882-5745aed02f59" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/nuxt.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/nuxt.config.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="package.json" />
+        <option value="JavaScript File" />
+        <option value="Vue Single File Component" />
+        <option value="SCSS File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="ProjectId" id="24Isfv9ArRuADbMo8FvIHsj3VF9" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/static/images/svg" />
+    <property name="list.type.of.created.stylesheet" value="SCSS" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="prettierjs.PrettierConfiguration.Package" value="C:\web\Vue\Nuxt\rent-vehicles\node_modules\prettier" />
+    <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2021.1.3\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+    <property name="vuejs.nuxt.types-notification-shown" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\web\Vue\Nuxt\rent-vehicles\static\images\svg" />
+      <recent name="C:\web\Vue\Nuxt\rent-vehicles\static" />
+      <recent name="C:\web\Vue\Nuxt\rent-vehicles\static\images" />
+      <recent name="C:\web\Vue\Nuxt\rent-vehicles\pages\_id" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\web\Vue\Nuxt\rent-vehicles\pages\_id" />
+      <recent name="C:\web\Vue\Nuxt\rent-vehicles\pages" />
+      <recent name="C:\web\Vue\Nuxt\rent-vehicles\api" />
+      <recent name="C:\web\Vue\Nuxt\rent-vehicles\static\images\svg" />
+      <recent name="C:\web\Vue\Nuxt\rent-vehicles\pages\_id\_specification" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="9b01066f-18a9-4f82-b882-5745aed02f59" name="Changes" comment="" />
+      <created>1643329547702</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1643329547702</updated>
+      <workItem from="1643329552651" duration="5226000" />
+      <workItem from="1643392401020" duration="48632000" />
+      <workItem from="1643918167939" duration="8337000" />
+      <workItem from="1643995336000" duration="770000" />
+      <workItem from="1644263833048" duration="49226000" />
+      <workItem from="1644771007739" duration="35924000" />
+      <workItem from="1645111496922" duration="72550000" />
+      <workItem from="1646922216387" duration="9217000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="gh-pages" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+</project>
