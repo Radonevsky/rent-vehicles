@@ -44,6 +44,9 @@ export default {
   font-size: 2.5rem;
   line-height: 120%;
   color: $dark-blue;
+  @include for-phone-only {
+    font-size: 1.5rem;
+  }
 }
 .text {
   margin-top: 25px;
@@ -63,6 +66,9 @@ export default {
   background-color: $blue;
   border-radius: 12px;
   border: none;
+  @include for-phone-only {
+    font-size: 0.875rem;
+  }
 }
 
 .dark {

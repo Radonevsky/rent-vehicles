@@ -42,6 +42,11 @@ export default {
   font-family: mainLight, sans-serif;
   font-size: 1rem;
   line-height: 0.875rem;
+  @include for-phone-only {
+    margin-top: 16px;
+    height: 52px;
+    font-size: 0.875rem;
+  }
 &::placeholder {
    color: $dark-gray;
  }

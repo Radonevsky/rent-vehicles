@@ -129,10 +129,10 @@ export default {
       color: $white;
     }
     .cup {
-      background: url("../../static/images/svg/CupLightGray.svg");
+      background-image: url("../../static/images/svg/CupLightGray.svg");
     }
     .pilot {
-      background: url("../../static/images/svg/ManLightGray.svg");
+      background-image: url("../../static/images/svg/ManLightGray.svg");
     }
   }
   .itemDescription {

@@ -93,6 +93,7 @@ export default {
 
 <style lang='scss' module>
 @import "assets/scss/vars";
+@import "assets/scss/mixins";
 
 .wrapper {
   height: 100%;
@@ -116,6 +117,15 @@ export default {
   border-radius: 48px 0 0 48px;
 
   background-color: $white;
+  @include for-phone-only {
+    padding: 24px 16px 32px 16px;
+    max-height: 653px;
+    top: auto;
+    right: auto;
+    bottom: 0;
+
+    border-radius: 24px 24px 0 0;
+  }
 }
 
 .modalHeader {
@@ -126,6 +136,10 @@ export default {
     font-size: 2.5rem;
     line-height: 120%;
     color: $dark-blue;
+    @include for-phone-only {
+      font-size: 1.5rem;
+      margin-top: 12px;
+    }
   }
   .close {
     width: $button-size;
@@ -133,15 +147,15 @@ export default {
     position: relative;
 
     background-color: $light-gray;
-    border-radius: 16px;
+    border-radius: 8px;
     border: none;
     &:before, &:after {
       content: '';
       position: absolute;
-      top: calc(50% - 16px / 2);
+      top: calc(50% - 8px / 2);
       left: 50%;
       width: 2px;
-      height: 16px;
+      height: 12px;
       background-color: $dark-blue;
     }
     &:before {
@@ -167,6 +181,11 @@ export default {
   background-color: $light-gray;
   position: relative;
   border-radius: 24px;
+  @include for-phone-only {
+    margin-top: 24px;
+    height: 260px;
+    border-radius: 16px;
+  }
   .addImg {
     cursor: pointer;
     position: absolute;
@@ -196,6 +215,11 @@ export default {
   color: $white;
   border: none;
   border-radius: 12px;
+  @include for-phone-only {
+    min-height: 52px;
+    font-size: 0.875rem;
+    margin-top: 24px;
+  }
 }
 
 .dark {

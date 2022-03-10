@@ -141,6 +141,7 @@ export default {
       background: url("../static/images/svg/Moon.svg") no-repeat;
       @include for-tablet-landscape {
         padding: 0;
+        margin-left: 20px;
         span {
           display: none;
         }
