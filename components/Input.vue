@@ -28,7 +28,7 @@ export default {
 </script>
 
 <style lang='scss' module>
-@import "../assets/scss/vars";
+@import "/assets/scss/vars";
 .formItem {
   width: 100%;
   height: 56px;
