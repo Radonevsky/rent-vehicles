@@ -122,6 +122,7 @@ export default {
     @include for-tablet-landscape {
       flex-grow: 0;
       padding-top: 0;
+      padding-bottom: 60px;
     }
     .title {
       font-family: mainBold, sans-serif;

@@ -174,7 +174,7 @@ export default {
 }
 .addImgWrapper {
   width: 100%;
-  height: 348px;
+  max-height: 348px;
   min-height: 78px;
   margin-top: 40px;
 
@@ -183,7 +183,7 @@ export default {
   border-radius: 24px;
   @include for-phone-only {
     margin-top: 24px;
-    height: 260px;
+    height: 160px;
     border-radius: 16px;
   }
   .addImg {
