@@ -105,10 +105,6 @@ export default {
     width: 100%;
     height: auto;
     max-height: 700px;
-/*    min-width: 712px;
-    max-width: 712px;
-    width: 100%;
-    max-height: 700px;*/
     overflow: hidden;
     border-radius: 24px;
   }
@@ -243,6 +239,12 @@ export default {
           color: $pink;
         }
       }
+    }
+  }
+  .rentInner {
+    @include for-phone-only {
+      background-color: $dark-blue;
+      box-shadow: -4px -3px 12px 5px $dark-blue;
     }
   }
 }
