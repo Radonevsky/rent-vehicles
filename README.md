@@ -1,68 +1,49 @@
-# rent-vehicles
+[Ссылка на деплой](https://radonevsky.github.io/rent-vehicles/)
+# Техническое задание
+## Цель работы
+Реализовать интерфейс по аренде транспортных средств
+### Технические требования
+- При выполнении работы не разрешается использовать UI библиотеки
+- Работа должна быть выполнена с использованием фреймворка Nuxt
+- Каждый компонент должен являться SFC
+- В секции template не разрешается использовать HTML препроцессоры
+- В секции script допускается использование только JavaScript
+- Секция style должна быть написана с использованием css-modules
+## Задачи
+### Часть 1
+1. Сверстать страницу выбора транспортного средства
 
-## Build Setup
+![example](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F7a5f174e-f48c-4971-bbc8-4fed883c5edf%2FUntitled.png?table=block&id=544da71c-4f22-452a-8630-29dd2ea53abc&spaceId=6503bd3d-21ef-4511-a433-b7c9b86c76dd&width=1920&userId=&cache=v2)
+2. Сверстать детальную страницу транспортного средства
 
-```bash
-# install dependencies
-$ npm install
+![exampleDetail](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F6fd04f01-5828-4873-883b-b3e7b815ec9b%2FUntitled.png?table=block&id=8d70352b-5552-4136-af37-6644f5f8b2bb&spaceId=6503bd3d-21ef-4511-a433-b7c9b86c76dd&width=1920&userId=&cache=v2)
 
-# serve with hot reload at localhost:3000
-$ npm run dev
+3. Реализовать мобильную версию
+##
 
-# build for production and launch server
-$ npm run build
-$ npm run start
+**Пояснения**
+- Каждая детальная страница должна иметь свой адрес
+- Переключение между типами информации (Specifications, Team, Rent terms) строится на основе вложенных маршрутов
+- В фильтре по типу выпадающий список стилизовать не нужно. Это должен быть нативный селект
 
-# generate static project
-$ npm run generate
-```
+### Часть 2
+1. Интегрировать взаимодействие с api
+2. Для всех страниц осуществить связку с данными, полученными из api
+3. На страницу выбора транспортного средства реализовать фильтр по типу
+**Пояснения**
+- В папке api проекта имеются два файла: vehicles.json и request.js. Перед загрузкой приложения необходимо предварительно загрузить данных с помощью метода getVehicles из request.js. Результат работы функции getVehicles сохраняется в хранилище Vuex. Метод getVehicles может вернуть ошибку с вероятностью 1/3. В этом случае ошибку необходимо обработать
+- Типы для фильтра на странице выбора должны быть сгенерированы из типов полученных транспортных средств
+- На странице выбора транспортного средства, данные каждой карточки должны браться из объекта соответствующего т.с.
+- На детальной странице транспортного средства из объекта соответствующего т.с. должны браться: заголовок, описания для трех вкладок, цена и изображение. Вся остальная информация хардкодится
 
-For detailed explanation on how things work, check out the [documentation](https://nuxtjs.org).
+### Часть 3
+1. Реализовать форму добавления нового транспортного средства
+![exampleModal](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fc3e1b8c2-5bc6-4879-884a-e56fdc88a80c%2FUntitled.png?table=block&id=f2937326-133f-4e75-b9e2-13afc2fb77b2&spaceId=6503bd3d-21ef-4511-a433-b7c9b86c76dd&width=1920&userId=&cache=v2)
+2. Реализовать переключение между светлой и темной темами
+**Пояснения**
+- После добавления нового транспортного средства, оно помещается в хранилище и отображается на странице выбора. Тип добавляемого транспортного средства должен быть custom
 
-## Special Directories
-
-You can create the following extra directories, some of which have special behaviors. Only `pages` is required; you can delete them if you don't want to use their functionality.
-
-### `assets`
-
-The assets directory contains your uncompiled assets such as Stylus or Sass files, images, or fonts.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/assets).
-
-### `components`
-
-The components directory contains your Vue.js components. Components make up the different parts of your page and can be reused and imported into your pages, layouts and even other components.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/components).
-
-### `layouts`
-
-Layouts are a great help when you want to change the look and feel of your Nuxt app, whether you want to include a sidebar or have distinct layouts for mobile and desktop.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/layouts).
-
-### `pages`
-
-This directory contains your application views and routes. Nuxt will read all the `*.vue` files inside this directory and setup Vue Router automatically.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/get-started/routing).
-
-### `plugins`
-
-The plugins directory contains JavaScript plugins that you want to run before instantiating the root Vue.js Application. This is the place to add Vue plugins and to inject functions or constants. Every time you need to use `Vue.use()`, you should create a file in `plugins/` and add its path to plugins in `nuxt.config.js`.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/plugins).
-
-### `static`
-
-This directory contains your static files. Each file inside this directory is mapped to `/`.
-
-Example: `/static/robots.txt` is mapped as `/robots.txt`.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/static).
-
-### `store`
-
-This directory contains your Vuex store files. Creating a file in this directory automatically activates Vuex.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/store).
+### Требования к результату
+- Результат работы должен соответствовать макету
+- Верстка должна быть резиновой на всех разрешениях до 1440px. После 1440px размеры остаются фиксированными, увеличиваются области справа и слева
+- Должна быть реализована мобильная версия
